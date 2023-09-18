@@ -4,10 +4,10 @@ import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 import Header from '../../Main/components/Header'
 
-import '../styles/Login.css';
-import '../styles/ClinicLogin.css'; 
+import '../../Login/styles/Login.css';
+import '../../Login/styles/ClinicLogin.css'; 
 
-function ClinicLogin(){
+function RecoverPassword(){
     const [showPassword, setShowPassword] = useState(false);
 
     const handleShowPassword = () => {
@@ -18,7 +18,7 @@ function ClinicLogin(){
         <Header/>
         <div className="login_clinic">
            <div className="login_form">
-            <p className="login_title">Entre na conta da sua Clínica:</p>
+            <p className="login_title">Recuperar conta:</p>
             <form>
             <div className="input_container">
                 <label>E-mail:</label>
@@ -26,8 +26,18 @@ function ClinicLogin(){
             </div>
             <div className="input_container">
                 <div className="pass_forgot">
-                <label>Senha:</label>
-                <a href='/forgot'>Esqueceu?</a>
+                <label>Nova senha:</label>
+                </div>
+                <div className="password-input">
+      <input type={showPassword ? 'text' : 'password'} placeholder="Digite sua senha" />
+      <p onClick={handleShowPassword} className="eye-icon">
+        {showPassword ? <FiEyeOff /> : <FiEye />}
+      </p>
+    </div>
+            </div>
+            <div className="input_container">
+                <div className="pass_forgot">
+                <label>Confirmar nova senha:</label>
                 </div>
                 <div className="password-input">
       <input type={showPassword ? 'text' : 'password'} placeholder="Digite sua senha" />
@@ -38,11 +48,8 @@ function ClinicLogin(){
             </div>
             <div className="button_login_clinic">
                 <button>
-                    Entrar
+                    Confirmar
                 </button>
-            </div>
-            <div className="register_page">
-                <span>Ainda não tem uma conta? <a href="/registerClinic">Cadastre-se</a></span>
             </div>
             </form>
            </div>
@@ -51,4 +58,4 @@ function ClinicLogin(){
     );
 };
 
-export default ClinicLogin;
+export default RecoverPassword;

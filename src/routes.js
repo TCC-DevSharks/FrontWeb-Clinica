@@ -8,6 +8,8 @@ import Clinica from './pages/Login/components/ClinicLogin';
 import Profissional from './pages/Login/components/ProfessionalLogin';
 import RegisterClinic from './pages/Register/components/RegisterClinic';
 import RegisterClinicContinue from './pages/Register/components/RegisterClinicContinue';
+import PasswordRecovery from './pages/Register/components/PasswordRecovery';
+
 
 
 
@@ -24,6 +26,7 @@ function Routes(){
                 <Route path="/professionals" component={Profissional} />
                 <Route path="/registerClinic" component={RegisterClinic} />
                 <Route path="/continue" component={RegisterClinicContinue} />
+                <Route path="/forgot" component={PasswordRecovery} />
             </Switch>        
         </BrowserRouter>
     );
