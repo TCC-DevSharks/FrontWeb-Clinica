@@ -1,0 +1,107 @@
+.p_login_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    padding-top: 90px;
+}
+h4{
+    width: 835px;
+    height: 169px;
+    font-size: 3rem;
+    font-weight: 600;
+}
+.download{
+    width: 258.4px;
+}
+
+.dowload_app{
+    display: flex;
+    flex-direction: column;
+}
+.phone img{
+    height: 60vh;
+   }
+@media (max-width: 570px) {
+    .p_login_container{
+        padding-top: 100px;
+        height: 100%;
+    }
+    h4{
+        padding-bottom: 300px;
+    }
+}
+
+@media (min-width: 650px) {
+    .p_login_container{
+justify-content: center;    
+}
+}
+
+@media (max-width: 800px) {
+    .p_login_container{
+        flex-direction: column;
+        gap: 20px;
+    }
+    h4{
+        justify-content: center;
+    }
+    .dowload_app{
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .phone img{
+        align-self: center;
+    }
+}
+@media (max-width: 1000px){
+    .p_login_container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h4{
+        width: 80%;
+    }
+    .dowload_app{
+        justify-content: center;
+        align-items: center;
+        
+    }
+}
+
+@media (min-width: 1000px) {
+    h4{
+        width: 80%;
+    }
+    .dowload_app{
+        max-width: 90%;
+        padding-left: 36px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    h4{
+        width: 80%;
+    }
+    .dowload_app{
+        max-width: 90%;
+        padding-left: 36px;
+    }
+}
+
+@media (max-width: 440px) {
+    .p_login_container{
+        padding-top: 150px;
+        height: 100%;
+    }
+    h4{
+        padding-bottom: 400px;
+    }
+}
+
+
+
