@@ -27,7 +27,7 @@ function ClinicLogin(){
             <div className="input_container">
                 <div className="pass_forgot">
                 <label>Senha:</label>
-                <a href='/forgot'>Esqueceu?</a>
+                <a href='/forgot' className='forgot_a'>Esqueceu?</a>
                 </div>
                 <div className="password-input">
       <input type={showPassword ? 'text' : 'password'} placeholder="Digite sua senha" />
@@ -42,7 +42,7 @@ function ClinicLogin(){
                 </button>
             </div>
             <div className="register_page">
-                <span>Ainda não tem uma conta? <a href="/registerClinic">Cadastre-se</a></span>
+                <span>Ainda não tem uma conta? <a href="/registerClinic" className='cad'>Cadastre-se</a></span>
             </div>
             </form>
            </div>

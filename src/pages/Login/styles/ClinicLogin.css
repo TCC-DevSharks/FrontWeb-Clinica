@@ -30,7 +30,7 @@ font-size: 28px;
 font-weight: 600;
 
 }
-.input_container a{
+.input_container {
     color: var(--medium-purple);
 }
 label{
@@ -45,7 +45,7 @@ label{
     padding-top: 24px;
     margin: 0;
 }
-a{
+.forgot_a {
     text-align: center;
     color: var(--medium-purple);
     font-size: 16px;
@@ -108,6 +108,9 @@ border:none;
     align-items: center;
     justify-content: center;
     width: 100%;
+}
+.register_page .cad{
+    color: var(--medium-purple);
 }
 .button_login_clinic button{
     font-size: 16px;
