@@ -203,7 +203,20 @@ form .eye-icon {
     cursor: pointer;
     z-index: 20; /* Defina um índice Z para o botão */
 }
-
+@media(max-width:730px) {
+    .login_form {
+        width: 100%;
+        box-shadow: none;
+    }
+    form input{
+        width: 100%;
+    }
+.register_page span{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}
 
 
 
