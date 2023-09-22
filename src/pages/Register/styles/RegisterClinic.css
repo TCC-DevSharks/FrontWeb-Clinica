@@ -27,7 +27,7 @@ font-weight: 600;
 line-height: 100%;
 padding-bottom: 13px;
 }
-.register input{
+.register .input{
     width: 100%;
     height: 50px;
     font-size: 16px;
@@ -97,4 +97,18 @@ background-color: var(--medium-purple);
 }
 #complement{
     width: 500px;
+}
+  
+form .password_register input {
+    width: 100%;
+    padding-right: 40px; /* Espaço para o ícone */
+  }
+  
+form .input-pass {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
 }
