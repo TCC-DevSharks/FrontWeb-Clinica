@@ -6,7 +6,7 @@ function Articles() {
     return (
         <div className="new">
             <div className="image-card">
-                <img className="img_card" src='./images/article-ex.png'></img>
+                <img className="img_card" src='./images/article-ex.png' alt='img-article'></img>
             </div>
 
             <div className="author_new">
