@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'; // Adicione o useEffect aqui
 import '../styles/RegisterClinic.css';
 import InputMask from 'react-input-mask';
-
-
 
 function RegisterClinic() {
   const [formData, setFormData] = useState({
@@ -17,7 +15,38 @@ function RegisterClinic() {
     tipo_telefone: 1,
     numero: '1234567890',
     descricao: 'NAO MUDOU',
+    endereco: '', // Adicione campos de endereço ao estado
+    neighborhood: '',
+    cidade: '',
   });
+
+  // Função para buscar informações de endereço com base no CEP
+  const fetchAddressInfo = async () => {
+    const { cep } = formData;
+    if (cep) {
+      try {
+        const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        if (response.ok) {
+          const data = await response.json();
+          setFormData({
+            ...formData,
+            endereco: data.logradouro || '',
+            neighborhood: data.bairro || '',
+            cidade: data.localidade || '',
+          });
+        } else {
+          console.error('Erro ao buscar informações de endereço');
+        }
+      } catch (error) {
+        console.error('Erro ao buscar informações de endereço:', error);
+      }
+    }
+  };
+
+  // Efeito para buscar informações de endereço quando o campo CEP muda
+  useEffect(() => {
+    fetchAddressInfo();
+  }, [formData.cep]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +70,6 @@ function RegisterClinic() {
       console.error('Erro ao enviar os dados:', error);
     }
   };
-
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -96,21 +124,28 @@ function RegisterClinic() {
         <div>
           <p>Endereço: *</p>
 
-          <input
-            type="text"
-            name='endereco'
-            placeholder='Rua'
-            readOnly
-          />
+          <div>
+            <p>Rua:</p>
+            <input
+              type="text"
+              name="endereco"
+              placeholder="Rua"
+              readOnly
+              value={formData.endereco}
+            />
+          </div>
 
-          <InputMask
-            type="text"
-            name="cep"
-            placeholder="Digite seu CEP"
-            mask="99999-999"
-            required
-            onChange={handleChange}
-          />
+          <div>
+            <p>CEP: *</p>
+            <InputMask
+              mask="99999-999"
+              type="text"
+              name="cep"
+              placeholder="Digite seu CEP"
+              required
+              onChange={handleChange}
+            />
+          </div>
 
           <input
             type="text"
@@ -118,12 +153,16 @@ function RegisterClinic() {
             placeholder='Nº'
             readOnly />
 
-          <input
-            type="text"
-            name='neighborhood'
-            placeholder='Bairro'
-            readOnly
-          />
+          <div>
+            <p>Bairro:</p>
+            <input
+              type="text"
+              name="neighborhood"
+              placeholder="Bairro"
+              readOnly
+              value={formData.neighborhood}
+            />
+          </div>
 
           <input
             type="text"
@@ -133,12 +172,16 @@ function RegisterClinic() {
             onChange={handleChange}
           />
 
-          <input
-            type="text"
-            name="cidade"
-            placeholder='Cidade'
-            readOnly
-          />
+          <div>
+            <p>Cidade:</p>
+            <input
+              type="text"
+              name="cidade"
+              placeholder="Cidade"
+              readOnly
+              value={formData.cidade}
+            />
+          </div>
         </div>
 
         <div>
