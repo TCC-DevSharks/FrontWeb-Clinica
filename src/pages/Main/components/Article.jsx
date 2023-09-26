@@ -28,7 +28,7 @@ function Articles() {
             </div>
 
             <button className='more'>
-                learn more <i class="fa-solid fa-square-caret-right"></i>
+                learn more <i className="fa-solid fa-square-caret-right"></i>
             </button>
         </div>
     );

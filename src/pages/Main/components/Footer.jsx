@@ -21,11 +21,11 @@ function Footer() {
                         <p>Services</p>
                     </a>
                     <a className="link" href="/">
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                         <p>Profissionais</p>
                     </a>
                     <a className="link" href="/blog">
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                         <p>Blog</p>
                     </a>
                 </div>
@@ -33,15 +33,15 @@ function Footer() {
                 <div className="links">
                     <h3 className='title_link'>Nossos Serviços</h3>
                     <a className="link" href="/">
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                         <p>Clinico Geral</p>
                     </a>
                     <a className="link" href="/">
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                         <p>Fisioterapia</p>
                     </a>
                     <a className="link" href="/">
-                        <i class="fa-solid fa-chevron-right"></i>
+                        <i className="fa-solid fa-chevron-right"></i>
                         <p>Nutricionista</p>
                     </a>
                     <a className="link" href="/">

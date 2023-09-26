@@ -11,9 +11,9 @@ function RegisterClinicContinue() {
             <div className="register_ii">
                 <h1 className='registre'>Cadastre sua Clínica</h1>
 
-                <div class="image-upload-container">
+                <div className="image-upload-container">
                     <input type="file" id="fileInput" accept="image/*"></input>
-                    <label for="fileInput" class="add-button">+</label>
+                    <label for="fileInput" className="add-button">+</label>
                 </div>
                 <div className="clinic_description">
                     <p className="registration_information">Descrição: *</p>
