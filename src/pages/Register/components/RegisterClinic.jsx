@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'; // Adicione o useEffect aqui
+import React, { useState, useEffect } from 'react';
 import '../styles/RegisterClinic.css';
 import InputMask from 'react-input-mask';
+import Header from '../../Main/components/Header';
 
 function RegisterClinic() {
   const [formData, setFormData] = useState({
@@ -15,7 +16,7 @@ function RegisterClinic() {
     tipo_telefone: 1,
     numero: '1234567890',
     descricao: 'NAO MUDOU',
-    endereco: '', // Adicione campos de endereço ao estado
+    endereco: '',
     neighborhood: '',
     cidade: '',
   });
@@ -82,169 +83,171 @@ function RegisterClinic() {
 
   return (
     <div>
-      <h1>Cadastre sua Clínica</h1>
+      <Header />
 
-      <form onSubmit={handleSubmit}>
+      <div className="container-geral-register">
+        <h1>Cadastre sua Clínica</h1>
 
-        <div>
-          <p>Razão Social: *</p>
-          <input
-            type="text"
-            name="razao_social"
-            placeholder='Digite sua razão social'
-            required
-            onChange={handleChange}
-          />
-        </div>
+        <form onSubmit={handleSubmit}>
+          <div className="oi">
+            <div className="container_1">
+              <div>
+                <p>Razão Social: *</p>
+                <input
+                  type="text"
+                  name="razao_social"
+                  placeholder='Digite sua razão social'
+                  required
+                  onChange={handleChange}
+                />
+              </div>
 
-        <div>
-          <p>CNPJ: *</p>
-          <InputMask
-            mask="99.999.999/9999-99"
-            type="text"
-            name="cnpj"
-            placeholder="Digite seu CNPJ"
-            required
-            onChange={handleChange}
-          />
-        </div>
+              <div>
+                <p>CNPJ: *</p>
+                <InputMask
+                  mask="99.999.999/9999-99"
+                  type="text"
+                  name="cnpj"
+                  placeholder="Digite seu CNPJ"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
 
-        <div>
-          <p>Telefone: *</p>
-          <InputMask
-            mask="(99) 99999-9999"
-            type="text"
-            name="telefone"
-            placeholder="Digite seu telefone"
-            required
-            onChange={handleChange}
-          />
-        </div>
+              <div>
+                <p>Telefone: *</p>
+                <InputMask
+                  mask="(99) 99999-9999"
+                  type="text"
+                  name="telefone"
+                  placeholder="Digite seu telefone"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
 
-        <div>
-          <p>Endereço: *</p>
+              <div>
+                <p>Endereço: *</p>
 
-          <div>
-            <p>Rua:</p>
-            <input
-              type="text"
-              name="endereco"
-              placeholder="Rua"
-              readOnly
-              value={formData.endereco}
-            />
+
+                <p>CEP: *</p>
+                <InputMask
+                  mask="99999-999"
+                  type="text"
+                  name="cep"
+                  placeholder="Digite seu CEP"
+                  required
+                  onChange={handleChange}
+                />
+
+                <p>Rua:</p>
+                <input
+                  type="text"
+                  name="endereco"
+                  placeholder="Rua"
+                  readOnly
+                  value={formData.endereco}
+                />
+
+                <input
+                  type="text"
+                  name="numero"
+                  placeholder='Nº'
+                  readOnly />
+
+                <p>Bairro:</p>
+                <input
+                  type="text"
+                  name="neighborhood"
+                  placeholder="Bairro"
+                  readOnly
+                  value={formData.neighborhood}
+                />
+
+                <input
+                  type="text"
+                  name="complemento"
+                  placeholder='Complemento'
+                  required
+                  onChange={handleChange}
+                />
+
+                <p>Cidade:</p>
+                <input
+                  type="text"
+                  name="cidade"
+                  placeholder="Cidade"
+                  readOnly
+                  value={formData.cidade}
+                />
+              </div>
+            </div>
+
+            <div className="container_2">
+              <div>
+                <p>E-mail: *</p>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder='Digite seu e-mail'
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <p >Senha: *</p>
+                <input
+                  type="password"
+                  name="senha"
+                  placeholder='Digite sua senha'
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <p>Confirmar Senha: *</p>
+                <input
+                  type="password"
+                  name="confirmar_senha"
+                  placeholder='Confirme sua senha'
+                  required
+                  readOnly
+                />
+              </div>
+
+              <div>
+                <p>Foto: *</p>
+                <input
+                  type="text"
+                  name="foto"
+                  id="fileInput"
+                  placeholder='Anexe uma foto'
+                  required
+                  onChange={handleChange}
+                ></input>
+              </div>
+
+              <div>
+                <p>Descrição: *</p>
+                <input
+                  type="text"
+                  name="descricao"
+                  placeholder='Descricao'
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
           </div>
-
           <div>
-            <p>CEP: *</p>
-            <InputMask
-              mask="99999-999"
-              type="text"
-              name="cep"
-              placeholder="Digite seu CEP"
-              required
-              onChange={handleChange}
-            />
+            <button type="submit" onClick={handleSubmit}>Continuar</button>
           </div>
+        </form>
 
-          <input
-            type="text"
-            name="numero"
-            placeholder='Nº'
-            readOnly />
+      </div>
 
-          <div>
-            <p>Bairro:</p>
-            <input
-              type="text"
-              name="neighborhood"
-              placeholder="Bairro"
-              readOnly
-              value={formData.neighborhood}
-            />
-          </div>
-
-          <input
-            type="text"
-            name="complemento"
-            placeholder='Complemento'
-            required
-            onChange={handleChange}
-          />
-
-          <div>
-            <p>Cidade:</p>
-            <input
-              type="text"
-              name="cidade"
-              placeholder="Cidade"
-              readOnly
-              value={formData.cidade}
-            />
-          </div>
-        </div>
-
-        <div>
-          <p>E-mail: *</p>
-          <input
-            type="text"
-            name="email"
-            placeholder='Digite seu e-mail'
-            required
-            onChange={handleChange}
-          />
-        </div>
-
-        <div>
-          <p >Senha: *</p>
-          <input
-            type="password"
-            name="senha"
-            placeholder='Digite sua senha'
-            required
-            onChange={handleChange}
-          />
-        </div>
-
-        <div>
-          <p>Confirmar Senha: *</p>
-          <input
-            type="password"
-            name="confirmar_senha"
-            placeholder='Confirme sua senha'
-            required
-            readOnly
-          />
-        </div>
-
-        <div>
-          <p>Foto: *</p>
-          <input
-            type="text"
-            name="foto"
-            id="fileInput"
-            placeholder='Anexe uma foto'
-            required
-            onChange={handleChange}
-          ></input>
-        </div>
-
-        <div>
-          <p>Descrição: *</p>
-          <input
-            type="text"
-            name="descricao"
-            placeholder='Descricao'
-            required
-            onChange={handleChange}
-          />
-        </div>
-
-        <div>
-          <button type="submit" onClick={handleSubmit}>Continuar</button>
-        </div>
-
-      </form>
     </div>
   );
 }
