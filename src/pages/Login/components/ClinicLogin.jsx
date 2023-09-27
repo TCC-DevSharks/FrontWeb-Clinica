@@ -19,6 +19,7 @@ function ClinicLogin() {
             if (response.ok) {
                 const data = await response.json();
                 setUserData(data); // Armazena os dados obtidos na variável de estado
+                console.log(data)
             } else {
                 console.error('Erro ao buscar os dados de usuário.');
             }
@@ -68,7 +69,6 @@ function ClinicLogin() {
                         </div>
                     </form>
                 </div>
-                <p>Dados obtidos na solicitação GET: {JSON.stringify(userData)}</p>
             </div>
         </div>
     );
