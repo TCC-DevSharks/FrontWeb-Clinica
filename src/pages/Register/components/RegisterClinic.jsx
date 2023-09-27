@@ -89,8 +89,24 @@ function RegisterClinic() {
         <h1>Cadastre sua Clínica</h1>
 
         <form onSubmit={handleSubmit}>
-          <div className="oi">
-            <div className="container_1">
+          <div className="box">
+            <div className="container_inicial">
+              <span className="title-section">
+                Informações Iniciais
+              </span>
+
+              <div>
+                <p>Foto: *</p>
+                <input
+                  type="text"
+                  name="foto"
+                  id="fileInput"
+                  placeholder='Anexe uma foto'
+                  required
+                  onChange={handleChange}
+                ></input>
+              </div>
+
               <div>
                 <p>Razão Social: *</p>
                 <input
@@ -115,21 +131,23 @@ function RegisterClinic() {
               </div>
 
               <div>
-                <p>Telefone: *</p>
-                <InputMask
-                  mask="(99) 99999-9999"
+                <p>Descrição: *</p>
+                <input
                   type="text"
-                  name="telefone"
-                  placeholder="Digite seu telefone"
+                  name="descricao"
+                  placeholder='Descricao'
                   required
                   onChange={handleChange}
                 />
               </div>
+            </div>
+
+            <div className="container_endereco">
+              <span className="title-section">
+                Endereço
+              </span>
 
               <div>
-                <p>Endereço: *</p>
-
-
                 <p>CEP: *</p>
                 <InputMask
                   mask="99999-999"
@@ -139,22 +157,31 @@ function RegisterClinic() {
                   required
                   onChange={handleChange}
                 />
+              </div>
 
+              <div>
                 <p>Rua:</p>
                 <input
+                  className='rua_input'
                   type="text"
                   name="endereco"
                   placeholder="Rua"
                   readOnly
                   value={formData.endereco}
                 />
+              </div>
 
+              <div>
+                <p>Número:</p>
                 <input
+                  className='numero'
                   type="text"
                   name="numero"
                   placeholder='Nº'
                   readOnly />
+              </div>
 
+              <div>
                 <p>Bairro:</p>
                 <input
                   type="text"
@@ -163,7 +190,10 @@ function RegisterClinic() {
                   readOnly
                   value={formData.neighborhood}
                 />
+              </div>
 
+              <div>
+                <p>Complemento:</p>
                 <input
                   type="text"
                   name="complemento"
@@ -171,7 +201,9 @@ function RegisterClinic() {
                   required
                   onChange={handleChange}
                 />
+              </div>
 
+              <div>
                 <p>Cidade:</p>
                 <input
                   type="text"
@@ -183,7 +215,23 @@ function RegisterClinic() {
               </div>
             </div>
 
-            <div className="container_2">
+            <div className="container_final">
+              <span className="title-section">
+                Login
+              </span>
+
+              <div>
+                <p>Telefone: *</p>
+                <InputMask
+                  mask="(99) 99999-9999"
+                  type="text"
+                  name="telefone"
+                  placeholder="Digite seu telefone"
+                  required
+                  onChange={handleChange}
+                />
+              </div>
+
               <div>
                 <p>E-mail: *</p>
                 <input
@@ -216,33 +264,11 @@ function RegisterClinic() {
                   readOnly
                 />
               </div>
-
-              <div>
-                <p>Foto: *</p>
-                <input
-                  type="text"
-                  name="foto"
-                  id="fileInput"
-                  placeholder='Anexe uma foto'
-                  required
-                  onChange={handleChange}
-                ></input>
-              </div>
-
-              <div>
-                <p>Descrição: *</p>
-                <input
-                  type="text"
-                  name="descricao"
-                  placeholder='Descricao'
-                  required
-                  onChange={handleChange}
-                />
-              </div>
             </div>
           </div>
+
           <div>
-            <button type="submit" onClick={handleSubmit}>Continuar</button>
+            <button className='button_login_clinic' type="submit" onClick={handleSubmit}>Cadastrar</button>
           </div>
         </form>
 

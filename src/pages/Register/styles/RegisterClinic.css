@@ -1,24 +1,70 @@
 .container-geral-register {
-    margin-top: 95px;
+    margin-top: 170px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    height: 100%;
 }
 
-.container-geral-register .oi {
-    width: 100%;
-    background-color: rgb(32, 86, 86);
+.container-geral-register h1{
+    color: rgb(74, 74, 74);
+}
+
+.container-geral-register form {
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 850px;
+    padding: 30px;
 }
 
-.container_1 {
-    background-color: rgb(77, 77, 139);
-    width: fit-content;
+.container-geral-register form .box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 800px;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 10px;
 }
 
-.container_2 {
-    background-color: blue;
-    width: fit-content;
+.container_inicial,
+.container_endereco,
+.container_final {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    border: 1px #B6B6F6 solid;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px;
 }
+
+.container_inicial span,
+.container_endereco span,
+.container_final span {
+    font-size: 20px;
+    color: #B6B6F6;
+}
+
+.container_inicial div,
+.container_endereco div,
+.container_final div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.container_inicial div p,
+.container_endereco div p,
+.container_final p {
+    margin: 0;
+}
+
+
