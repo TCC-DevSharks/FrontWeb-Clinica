@@ -46,7 +46,8 @@
 .container_inicial span,
 .container_endereco span,
 .container_final span {
-    font-size: 20px;
+    font-size: 23px;
+    font-weight: 500;
     color: #B6B6F6;
 }
 
@@ -66,5 +67,11 @@
 .container_final p {
     margin: 0;
 }
+
+
+
+
+
+
 
 

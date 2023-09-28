@@ -5,7 +5,7 @@ function SectionHome() {
     return (
         <section className="home">
             <div className="container-text_home">
-                <h1>Acompanhe e cuide da sua gravidez.</h1>
+                <h1>Acompanhe e cuide da sua <h1>gravidez.</h1></h1>
 
                 <p>Lorem ipsum dolor sit amet consectetur 
                 adipisicing elit. Quas fuga nam deleniti, 

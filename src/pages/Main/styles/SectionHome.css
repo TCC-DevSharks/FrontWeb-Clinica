@@ -17,6 +17,11 @@
 .container-text_home h1 {
     font-size: 1.8rem;
     text-align: center;
+    font-weight: 600;
+}
+
+.container-text_home h1 h1{
+    color: var(--primary-color);
 }
 
 .container-text_home p {
