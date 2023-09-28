@@ -1,4 +1,4 @@
-.login_pro{
+.login_pro {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -7,45 +7,51 @@
     padding-top: 90px;
 }
 
-.login_pro a{
+.login_pro a {
     text-decoration: none;
 }
+
 .forgot_p {
     color: var(--yellow);
 }
-.login_pro a:hover{
-    color: #FFDAB98F;
+
+.login_pro a:hover {
+    color: #F3D24B;
 }
 
 .input_container_p {
     color: var(--yellow);
 }
-.forgot_p a{ 
+
+.forgot_p a {
     color: var(--yelow);
 }
-.button_login_pro{
+
+.button_login_pro {
     display: flex;
-height: 52px;
-padding: 16px;
-justify-content: center;
-align-items: center;
-align-self: stretch;
-border-radius: 8px;
-background-color: var(--yellow);
-color: #fff;
-font-weight: 600;
-line-height: 100%;
-border-color: var(--yellow);
-cursor: pointer;
-border:none;
+    height: 52px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: var(--yellow);
+    color: #fff;
+    font-weight: 600;
+    line-height: 100%;
+    border-color: var(--yellow);
+    cursor: pointer;
+    border: none;
 }
-.button_login_pro button{
+
+.button_login_pro button {
     font-size: 16px;
     background: transparent;
     border: none;
     color: #fff;
 }
-.button_login_pro:hover{
+
+.button_login_pro:hover {
     opacity: 0.8;
 
 }
