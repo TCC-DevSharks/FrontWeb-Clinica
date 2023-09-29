@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import Header from '../../Main/components/Header'
 import '../styles/Login.css';
@@ -6,37 +6,52 @@ import '../styles/ClinicLogin.css';
 
 function ClinicLogin() {
     const [showPassword, setShowPassword] = useState(false);
-    const [userData, setUserData] = useState(null); // Armazena os dados obtidos na solicitação GET
 
     const handleShowPassword = () => {
         setShowPassword(!showPassword);
     };
 
-    // Função para fazer a solicitação GET
-    const fetchData = async () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        const loginData = {
+            email: email,
+            senha: password,
+        };
+
         try {
-            const response = await fetch('http://localhost:3001/clinica');
-            if (response.ok) {
-                const data = await response.json();
-                setUserData(data); // Armazena os dados obtidos na variável de estado
-                console.log(data)
+            const response = await fetch('http://localhost:3005/login/clinica', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(loginData),
+            });
+
+            const status = response.status
+
+            if (status === 201) {
+                console.log("login efetuado seu tonto")
+                console.log(status)
             } else {
-                console.error('Erro ao buscar os dados de usuário.');
+                console.log("login deu errado sua merda")
             }
         } catch (error) {
-            console.error('Erro na solicitação GET:', error);
+            console.error('Erro ao fazer login:', error);
         }
     };
 
-    // Função para lidar com o envio do formulário
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        fetchData(); // Chama a função de solicitação GET ao enviar o formulário
-    };
-
-    useEffect(() => {
-        // Você pode deixar este useEffect vazio se não tiver nenhum efeito colateral inicial
-    }, []);
 
     return (
         <div>
@@ -44,10 +59,15 @@ function ClinicLogin() {
             <div className="login_clinic">
                 <div className="login_form">
                     <p className="login_title">Entre na conta da sua Clínica:</p>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleLogin}> {/* Adicione o onSubmit ao formulário */}
                         <div className="input_container">
                             <label>E-mail:</label>
-                            <input type="text" placeholder='Digite seu e-mail' />
+                            <input
+                                type="text"
+                                placeholder='Digite seu e-mail'
+                                value={email} // Associe o valor do input ao estado email
+                                onChange={handleEmailChange} // Adicione o evento onChange
+                            />
                         </div>
                         <div className="input_container">
                             <div className="pass_forgot">
@@ -55,7 +75,12 @@ function ClinicLogin() {
                                 <a href='/forgot' className='forgot_a'>Esqueceu?</a>
                             </div>
                             <div className="password-input">
-                                <input type={showPassword ? 'text' : 'password'} placeholder="Digite sua senha" />
+                                <input
+                                    type={showPassword ? 'text' : 'password'}
+                                    placeholder="Digite sua senha"
+                                    value={password} // Associe o valor do input ao estado password
+                                    onChange={handlePasswordChange} // Adicione o evento onChange
+                                />
                                 <p onClick={handleShowPassword} className="eye-icon">
                                     {showPassword ? <FiEyeOff /> : <FiEye />}
                                 </p>

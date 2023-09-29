@@ -53,7 +53,7 @@ function RegisterClinic() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3001/clinica', {
+      const response = await fetch('http://localhost:3005/clinica', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
